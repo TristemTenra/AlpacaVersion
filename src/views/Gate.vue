@@ -1,5 +1,5 @@
 <template>
-  <div id="farmbody">
+  <div id="gatebody">
   </div>
 </template>
 <script>
@@ -7,7 +7,7 @@
 
 <style>
 
-#farmbody {
+#gatebody {
 width: 100%;
 }
 

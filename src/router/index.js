@@ -6,24 +6,39 @@ Vue.use(VueRouter)
 
   const routes = [
   {
+    path: '/gate',
+    name: 'gate',
+    component:  () => import('../views/Gate.vue')
+  },
+  {
     path: '/',
     name: 'fair',
-    component: Fair
+    component: Fair,
+    children:[
+      {
+        path: 'alpaca',
+        name: 'alpaca',
+        component:  () => import('../views/Alpaca.vue')
+      }
+    ]
   },
   {
     path: '/farm',
     name: 'farm',
-    component: () => import('../views/Farm.vue')
+    component: () => import('../views/Farm.vue'),
+    children: [
+      {
+        path: 'user',
+        name: 'user',
+        component:  () => import('../views/User.vue')
+      }
+    ]
+
   },
   {
     path: '/faq',
     name: 'faq',
     component: () => import('../views/Faq.vue')
-  },
-  {
-    path: '/alcove',
-    name: 'alcove',
-    component: () => import('../views/Alcove.vue')
   }
 ]
 

@@ -2,8 +2,8 @@
   <div id="alpaca">
     <MainMenu/>
     <div id="rightfield">
-      <div id="slogan"><p>АЛЬПАКА - АВТОРСКОЕ ЛИТЕРАТУРНОЕ ПРОИЗВЕДЕНИЕ</p></div>
-      <transition :name="PageSlide">
+      <div class="topblock"></div>
+      <transition mode="out-in" name="fade">
         <router-view></router-view>
       </transition>
     </div>
@@ -22,59 +22,83 @@ export default {
 </script>
 
 <style>
+
 * {box-sizing: border-box;}
 
+*:focus {
+    outline: none;
+}
+
 html {
-	background: rgba(72,144,71,1);
-	background: -moz-linear-gradient(top, rgba(72,144,71,1) 0%, rgba(0,87,70,1) 100%);
-	background: -webkit-linear-gradient(top, rgba(72,144,71,1) 0%, rgba(0,87,70,1) 100%);
-	background: -o-linear-gradient(top, rgba(72,144,71,1) 0%, rgba(0,87,70,1) 100%);
-	background: -ms-linear-gradient(top, rgba(72,144,71,1) 0%, rgba(0,87,70,1) 100%);
-	background: linear-gradient(to bottom, rgba(72,144,71,1) 0%, rgba(0,87,70,1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#489047', endColorstr='#005746', GradientType=0 );
-	min-width:1024px;
-	min-height:768px;
-	width:100%;
-	height:100%;
-	padding: 0;
-	margin: 0;
-  }
+background: rgb(0 107 73);
+background: radial-gradient(at center, #daff00, #007359);
+width:100%;
+height:100%;
+padding: 0;
+margin: 0;
+font-size: 1vw;
+}
 
 body {
-	background-image:url('~@/assets/bg1.png');
-	font-family: 'Montserrat', sans-serif;
-	height:100%;
-	width:100%;
-	min-width:1024px;
-	min-height:768px;
-  }
+background-image:url('~@/assets/bg1.png');
+font-family: 'Montserrat', sans-serif;
+height:100%;
+width:100%;
+min-height: 40vw;
+}
 
-  #rightfield {
-  min-height:768px;
-  min-width:682px;
-  border-width: 0px 5px;
-  border-style: solid;
-  border-color: rgba(91, 84, 78, 0.24);
-  right: 5%;
-  padding: 15px 10px;
-  background-color: #e0d8bd;
-  position: absolute;
-  display: block;
-  height: 100%;
-  overflow:auto;
-  box-sizing: border-box;
-  left: calc(5% + 240px);
-  }
+#rightfield {
+right: 5%;
+padding: 0 1.5vw;
+background-color: #e0d8bd;
+position: absolute;
+box-shadow: 0 0 1vw rgba(0, 0, 0, .5),
+            0 0 1vw rgba(255, 255, 255, .4) inset;
+display: block;
+height: 100%;
+overflow:auto;
+box-sizing: border-box;
+left:20%;
+min-height: 40vw;
+}
 
-  #slogan {
-  text-align: center;
-  }
+input {outline:none;}
+textarea:focus, input:focus{
+    outline: none;
+}
 
-  #slogan p {
-  font-weight: 200;
-  font-size: 20px;
-  display: inline;
-  border-bottom: 5px dotted #cbc0aa;
-  color: #746358;
-  }
+select {
+background-color: white;
+border: thin solid blue;
+border-radius: 4px;
+display: inline-block;
+font: inherit;
+line-height: 1.5em;
+padding: 0.5em 3.5em 0.5em 1em;
+
+margin: 0;
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+-webkit-appearance: none;
+-moz-appearance: none;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .5s
+}
+
+.fade-enter,
+.fade-leave-active {
+  opacity: 0
+}
+
+.topblock
+{
+position: relative;
+height: 1vw;
+top:0;
+width: 100%;
+}
 </style>

@@ -1,10 +1,11 @@
 <template>
   <div id="bigsearch">
     <form name="genres" method="post" action="">
-      <button type="submit">ПОИСК ПО ЖАНРАМ</button>
+      <button type="submit">ПОИСК</button>
       <p>
-        <b>ЖАНР :</b>
+        <b>Жaнр :</b>
         <select name="select">
+          <option>Все</option>
           <option>Фэнтези</option>
           <option>Фантастика</option>
           <option>Психология</option>
@@ -15,8 +16,9 @@
         </select>
       </p>
       <p>
-        <b>РАЗМЕР :</b>
+        <b>Размер :</b>
         <select name="select">
+          <option>Любой</option>
           <option>Мин</option>
           <option>Мид</option>
           <option>Биг</option>
@@ -24,7 +26,7 @@
         </select>
       </p>
       <p>
-        <b>ПОРЯДОК :</b>
+        <b>Порядок :</b>
         <select name="select">
           <option>Рейтинг &#9650;</option>
           <option>Рейтинг &#9660;</option>
@@ -43,61 +45,78 @@
 #bigsearch {
 overflow: hidden;
 width: 100%;
-height: 27px;
-margin-top: 10px;
-background-color: #cbc0aa;
-border-radius: 5px;
-border-width: 2px;
-border-style: solid;
-border-color: #ebe6de;
+display: block;
+transition: 0.3s;
+padding: 0.6vw 1.5vw;
+height: 3vw;
+border-radius: 0.5vw 0.5vw 0 0;
+border-width: 0;
 box-sizing: border-box;
-min-width: 652px;
+background-color: #cbc0aa;
+background-image:url('~@/assets/bg3.png');
 }
 
 #bigsearch p
-
 {
 float:left;
-padding:0px 0px 0px 10px;
+margin-right: 1.5vw;
 }
 
 #bigsearch p b
-
 {
-font-weight:700;
-font-size:10px;
-color:#5b544e;
+padding:0.4vw 0 0 0;
+color: #5b544e;
+letter-spacing: 0.07vw;
+font-weight: 400;
+font-size: 1vw;
+display: block;
+float: left;
 }
 
 #bigsearch p select
-
 {
+width: 8vw;
+letter-spacing: 0.07vw;
 font-weight: 400;
-font-size: 12px;
-margin-left: 5px;
-height: 24px!important;
+font-size: 1vw;
+margin-left: 0.5vw;
+float: left;
+height: 1.8vw;
+display: block;
 border: 0px;
-background-color: #9c8678;
-color: #e0d8bd;
+background-color: #ebe6de;
+color: #757575;
+border-radius: 0.5vw;
+border-width: 0;
+padding: 0.2vw 0.5vw;
 }
+
+#bigsearch select.minimal {
+  background:none;
+}
+
 
 #bigsearch button {
 font-family: 'Montserrat', sans-serif;
-height: 23px;
+height: 1.8vw;
 transition: 0.3s;
 float: right;
-padding: 0px 23px 0px 10px;
-background-color: #5b544e;
-background-position:right;
-background-repeat:no-repeat;
-background-image:url('~@/assets/searchbig.png');
-font-size: 11px;
-border: none;
+padding: 0.2vw 1.5vw;
+border-radius: 0.5vw;
+border-width: 0.1vw;
+border-style: solid;
+border-color: #ebe6de;
+box-sizing: border-box;
+background-color:#9c5c5a;
+background-image:url('~@/assets/bg2.png');
+font-size: 1vw;
+font-weight: 700;
 cursor: pointer;
-color: #e0d8bd;
+color: #fff;
+letter-spacing: 0.15vw;
 }
 
 #bigsearch button:hover {
-background-color:#2f2c29;
+background-color:#6f403f;
 }
 </style>
